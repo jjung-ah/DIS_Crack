@@ -1,0 +1,9 @@
+name: data_03
+img_dir: /Users/sunn/Documents/data/dis/data_03/img
+gt_dir: /Users/sunn/Documents/data/dis/data_03/gt
+img_ext:
+  - jpg
+  - png
+gt_ext:
+  - jpg
+  - png
