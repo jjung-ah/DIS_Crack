@@ -1,5 +1,6 @@
-# Coding by SUNN(01139138@hyundai-autoever.com)
+# Coding by BAEK(01153450@hyundai-autoever.com)
 
+import os
 import torch
 import numpy as np
 from typing import Dict
@@ -23,15 +24,10 @@ def read_img(img_dir: str) -> Tensor:
     return img
 
 
-def read_gt(gt_dir: str) -> Tensor:
-    gt = io.imread(gt_dir)
-
-    if len(gt.shape) > 2:
-        gt = gt[:, :, 0]
-
-    # np.array to torch.tensor
-    torch.unsqueeze(torch.tensor(gt, dtype=torch.float32), 0)
+def read_gt(gt_dir: str) -> str:
+    gt = os.path.dirname(gt_dir).split(os.path.sep)[-1]
     return gt
+
 
 
 @DATASETS_REGISTRY.register()
